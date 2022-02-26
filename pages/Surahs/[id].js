@@ -49,14 +49,12 @@ export default function Details({ quarnData }) {
           className="bg-[#009b5a] p-2 rounded text-white mt-2"
         >
           Play the {quarnData.name.long} ({quarnData.name.transliteration.en})
-          {quarnData.verses.map((item) => (
-            <ReactAudioPlayer
-              // controls
-              preload="auto"
-              key={item.number}
-              src={`https://cdn.alquran.cloud/media/audio/ayah/ar.alafasy/${item.number.inQuran}`}
-            />
-          ))}
+          <ReactAudioPlayer
+            controls
+            preload="auto"
+            key={quarnData.number}
+            src={`https://github.com/0nahid/Surah-API/blob/main/Surah/${quarnData.number}.mp3?raw=true`}
+          />
         </button>
         {/* Details */}
         <ol key={quarnData.number}>
