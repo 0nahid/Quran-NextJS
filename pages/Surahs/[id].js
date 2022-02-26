@@ -31,9 +31,9 @@ export default function Details({ quarnData }) {
       </Head>
 
       <div className=" p-5 rounded">
-        <h1 key={quarnData.number}>
+        <h1 key={quarnData.number} className="text-2xl font-semibold">
           {" "}
-          This is a detail page of Surah {quarnData.name.transliteration.en} -(
+          {quarnData.name.transliteration.en} -(
           {quarnData.name.long}){" "}
         </h1>
 
