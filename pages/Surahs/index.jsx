@@ -1,4 +1,5 @@
 import axios from "axios";
+import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -11,10 +12,13 @@ export default function Quran() {
   }, []);
   return (
     <>
+      <Head>
+        <title key={quarnData.number}>القرآن al-Qurʾān </title>
+      </Head>
       <ol key="0">
         {quarnData.map((item) => (
           <li key={item.number} style={{ listStyleType: "decimal" }}>
-            <Link href={`${item.number}`} key={item.number} passHref>
+            <Link href={`Surahs/${item.number}`} key={item.number} passHref>
               <div
                 className="mt-4 bg-slate-100 p-4 rounded cursor-pointer hover:border-l-4 hover:border-[#009b5a]"
                 key={item.number}
