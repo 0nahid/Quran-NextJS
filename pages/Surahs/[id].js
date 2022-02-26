@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRef, useState } from "react";
 import ReactAudioPlayer from "react-audio-player";
 
 export async function getStaticPaths() {
@@ -23,8 +24,10 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Details({ quarnData }) {
+  const [audios, setAudios] = useState([]);
+  const audioRef = useRef();
   const handleAudioPlay = () => {
-    console.log("play");
+    console.log("Clicked");
   };
   return (
     <>
@@ -51,10 +54,10 @@ export default function Details({ quarnData }) {
           Play the {quarnData.name.long} ({quarnData.name.transliteration.en})
           {quarnData.verses.map((item) => (
             <ReactAudioPlayer
-              src={item.audio.primary}
-              autoPlay={false}
               // controls
+              preload="auto"
               key={item.number}
+              src={item.audio.primary}
             />
           ))}
         </button>
@@ -72,7 +75,7 @@ export default function Details({ quarnData }) {
               <ReactAudioPlayer
                 controls
                 autoplay
-                preload
+                preload="auto"
                 // loop
                 key={item.number}
                 src={item.audio.primary}
