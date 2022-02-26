@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
+import ReactAudioPlayer from "react-audio-player";
+
 export async function getStaticPaths() {
   const res = await fetch("https://api.quran.sutanlab.id/surah");
   const quarnData = await res.json();
@@ -21,6 +23,9 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Details({ quarnData }) {
+  const handleAudioPlay = () => {
+    console.log("play");
+  };
   return (
     <>
       <Head>
@@ -37,6 +42,22 @@ export default function Details({ quarnData }) {
           {quarnData.name.long}){" "}
         </h1>
 
+        {/* Play button */}
+        <button
+          key={quarnData.number}
+          onClick={handleAudioPlay}
+          className="bg-[#009b5a] p-2 rounded text-white mt-2"
+        >
+          Play the {quarnData.name.long} ({quarnData.name.transliteration.en})
+          {quarnData.verses.map((item) => (
+            <ReactAudioPlayer
+              src={item.audio.primary}
+              autoPlay={false}
+              // controls
+              key={item.number}
+            />
+          ))}
+        </button>
         {/* Details */}
         <ol key={quarnData.number}>
           {quarnData.verses.map((item) => (
@@ -48,11 +69,12 @@ export default function Details({ quarnData }) {
                 {item.text.arab}
               </h1>
               <h2 key={item.number}>{item.text.transliteration?.en}</h2>
-              <audio
+              <ReactAudioPlayer
+                autoPlay={false}
                 controls
                 key={item.number}
                 src={item.audio.primary}
-              ></audio>
+              />
             </li>
           ))}
         </ol>
