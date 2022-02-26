@@ -48,7 +48,11 @@ export default function Details({ quarnData }) {
                 {item.text.arab}
               </h1>
               <h2 key={item.number}>{item.text.transliteration?.en}</h2>
-             
+              <audio
+                controls
+                key={item.number}
+                src={item.audio.primary}
+              ></audio>
             </li>
           ))}
         </ol>
