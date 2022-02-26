@@ -6,7 +6,7 @@ export async function getStaticPaths() {
   const paths = quarnData.data.map((item) => ({
     params: { id: item.number.toString() },
   }));
-  console.log(quarnData);
+  // console.log(quarnData);
   return { paths, fallback: false };
 }
 
@@ -40,8 +40,15 @@ export default function Details({ quarnData }) {
         {/* Details */}
         <ol key={quarnData.number}>
           {quarnData.verses.map((item) => (
-            <li key={item.number} style={{ listStyleType: "decimal" }}>
-              <h1 key={item.number}>{item.text.arab}</h1>
+            <li
+              key={item.number}
+              className="mt-4 bg-slate-100 p-4 rounded hover:border-l-4 hover:border-[#009b5a] list-decimal	"
+            >
+              <h1 className="mb-2" key={item.number}>
+                {item.text.arab}
+              </h1>
+              <h2 key={item.number}>{item.text.transliteration?.en}</h2>
+             
             </li>
           ))}
         </ol>
@@ -51,7 +58,7 @@ export default function Details({ quarnData }) {
           <Link key={quarnData.name.transliteration.id} href="/">
             <a
               key={quarnData.name.transliteration.en}
-              className="bg-[#009B5A] p-2 "
+              className="bg-[#009B5A] p-2 rounded text-white "
             >
               Back to Home
             </a>
