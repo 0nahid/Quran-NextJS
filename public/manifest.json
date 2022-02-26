@@ -1,0 +1,32 @@
+{
+    "theme_color": "#f69435",
+    "background_color": "#f69435",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "\u0627\u0644\u0642\u0631\u0622\u0646 al-Qur\u02be\u0101n",
+    "short_name": "Qur\u02be\u0101n",
+    "description": "This is a simple ui \u0627\u0644\u0642\u0631\u0622\u0646 al-Qur\u02be\u0101n for cross platform devices with single codebase.",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
