@@ -70,8 +70,10 @@ export default function Details({ quarnData }) {
               </h1>
               <h2 key={item.number}>{item.text.transliteration?.en}</h2>
               <ReactAudioPlayer
-                autoPlay={false}
                 controls
+                autoplay
+                preload
+                // loop
                 key={item.number}
                 src={item.audio.primary}
               />
