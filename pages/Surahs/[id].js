@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useRef, useState } from "react";
 import ReactAudioPlayer from "react-audio-player";
 
 export async function getStaticPaths() {
@@ -24,8 +23,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Details({ quarnData }) {
-  const [audios, setAudios] = useState([]);
-  const audioRef = useRef();
   const handleAudioPlay = () => {
     console.log("Clicked");
   };
@@ -57,7 +54,7 @@ export default function Details({ quarnData }) {
               // controls
               preload="auto"
               key={item.number}
-              src={item.audio.primary}
+              src={`https://cdn.alquran.cloud/media/audio/ayah/ar.alafasy/${item.number.inQuran}`}
             />
           ))}
         </button>
