@@ -42,7 +42,7 @@ export default function Details({ quarnData }) {
           {quarnData.verses.map((item) => (
             <li
               key={item.number}
-              className="mt-4 bg-slate-100 p-4 rounded hover:border-l-4 hover:border-[#009b5a] list-decimal	"
+              className="mt-4 bg-slate-100 p-4 rounded hover:bg-[#009b5a] list-decimal	"
             >
               <h1 className="mb-2" key={item.number}>
                 {item.text.arab}
