@@ -20,7 +20,7 @@ export default function Quran() {
           <li key={item.number} style={{ listStyleType: "decimal" }}>
             <Link href={`Surahs/${item.number}`} key={item.number} passHref>
               <div
-                className="mt-4 bg-slate-100 p-4 rounded cursor-pointer hover:border-l-4 hover:border-[#009b5a]"
+                className="mt-4 bg-slate-100 p-4 rounded cursor-pointer hover:bg-[#009b5a] hover:text-white"
                 key={item.number}
               >
                 <a key={item.number}>
