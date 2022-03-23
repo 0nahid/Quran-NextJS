@@ -78,7 +78,7 @@ export default function Details({ quranData }) {
               {quranData.name.transliteration.en})
               <AudionPlayer
                 key={quranData.number}
-                src={`https://github.com/0nahid/Surah-API/blob/main/Surah/${quranData.number}.mp3?raw=true`}
+                audioSrc={`https://github.com/0nahid/Surah-API/blob/main/Surah/${quranData.number}.mp3?raw=true`}
               />
             </div>
           </div>
