@@ -6,7 +6,7 @@ export async function getStaticPaths() {
   const res = await fetch("https://api.quran.sutanlab.id/surah");
   const quarnData = await res.json();
   const paths = quarnData.data.map((item) => ({
-    params: { id: item.number.toString() },
+    params: { id: item.number.toString() }
   }));
   // console.log(quarnData);
   return { paths, fallback: false };
@@ -17,8 +17,8 @@ export async function getStaticProps({ params }) {
   const quarnData = await res.json();
   return {
     props: {
-      quarnData: quarnData.data,
-    },
+      quarnData: quarnData.data
+    }
   };
 }
 
@@ -83,6 +83,7 @@ export default function Details({ quarnData }) {
         <div key={quarnData.number} className="mt-5">
           <Link key={quarnData.name.transliteration.id} href="/">
             <a
+              href
               key={quarnData.name.transliteration.en}
               className="bg-[#009B5A] p-2 rounded text-white "
             >
