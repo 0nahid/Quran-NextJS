@@ -31,33 +31,33 @@ export default function Details({ quranData }) {
         </title>
       </Head>
 
-      <div className="p-5 rounded relative">
-        <div
-          className="flex mt-5 flex-wrap overflow-hidden sm:-mx-1 fixed top-0 left-0 right-0 bg-slate-900 p-5"
-          key={quranData.number}
-        >
-          <div
-            key={quranData.number}
-            className="w-full overflow-hidden sm:my-1 sm:px-1 md:w-1/2 lg:w-1/2 xl:w-1/2"
-          >
-            <h1 key={quranData.number} className="text-2xl font-semibold">
-              {quranData.name.transliteration.en} -(
-              {quranData.name.long})
-            </h1>
+      <div className="p-5" key={quranData.name.transliteration.en}>
+        <div className="flex flex-wrap -mx-2 overflow-hidden text-center items-center"  key={quranData.name.transliteration.en}>
+          <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"  key={quranData.name.transliteration.en}>
+            <div
+              key={quranData.number}
+            >
+              <h1 key={quranData.number} className="text-2xl font-semibold">
+                {quranData.name.transliteration.en} -(
+                {quranData.name.long})
+              </h1>
+            </div>
           </div>
-          {/* Navigate to Home */}
-          <div
-            key={quranData.number}
-            className="w-full overflow-hidden sm:my-1 sm:px-1 md:w-1/2 lg:w-1/2 xl:w-1/2"
-          >
-            <Link key={quranData.name.transliteration.id} href="/">
-              <a
-                key={quranData.name.transliteration.en}
-                className="bg-[#009B5A] p-4 rounded-xl text-white "
-              >
-                Back to Home
-              </a>
-            </Link>
+          <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"  key={quranData.name.transliteration.en}>
+            {/* Navigate to Home */}
+            <div
+              key={quranData.number}
+              
+            >
+              <Link key={quranData.name.transliteration.id} href="/">
+                <a
+                  key={quranData.name.transliteration.en}
+                  className="bg-[#009b5a] p-10 m-10 rounded"
+                >
+                  Back to Home
+                </a>
+              </Link>
+            </div>
           </div>
         </div>
 
