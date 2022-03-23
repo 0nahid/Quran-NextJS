@@ -31,9 +31,9 @@ export default function Details({ quranData }) {
         </title>
       </Head>
 
-      <div className="p-5 rounded">
+      <div className="p-5 rounded relative">
         <div
-          className="flex mt-5 flex-wrap overflow-hidden sm:-mx-1"
+          className="flex mt-5 flex-wrap overflow-hidden sm:-mx-1 fixed top-0 left-0 right-0 bg-slate-900 p-5"
           key={quranData.number}
         >
           <div
@@ -53,7 +53,7 @@ export default function Details({ quranData }) {
             <Link key={quranData.name.transliteration.id} href="/">
               <a
                 key={quranData.name.transliteration.en}
-                className="bg-[#009B5A] p-2 rounded text-white "
+                className="bg-[#009B5A] p-4 rounded-xl text-white "
               >
                 Back to Home
               </a>
@@ -63,7 +63,7 @@ export default function Details({ quranData }) {
 
         <div
           key={quranData.name.transliteration.en}
-          className="md:grid md:grid-cols-3 md:grid-rows-2 md:gap-2"
+          className="md:grid md:grid-cols-3 md:grid-rows-2 md:gap-2 mt-10 mb-10"
         >
           <div
             key={quranData.name.transliteration.en}
