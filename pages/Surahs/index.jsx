@@ -15,7 +15,7 @@ export default function Quran() {
       <Head>
         <title key={quarnData.number}>القرآن al-Qurʾān </title>
       </Head>
-      <ol key="0">
+      <ol key="0" className="p-5">
         {quarnData.map((item) => (
           <li key={item.number} style={{ listStyleType: "decimal" }}>
             <Link href={`Surahs/${item.number}`} key={item.number} passHref>

@@ -31,24 +31,31 @@ export default function Details({ quranData }) {
         </title>
       </Head>
 
-      <div className="p-5" key={quranData.name.transliteration.en}>
-        <div className="flex flex-wrap -mx-2 overflow-hidden text-center items-center"  key={quranData.name.transliteration.en}>
-          <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"  key={quranData.name.transliteration.en}>
-            <div
-              key={quranData.number}
-            >
+      <div
+        className="p-5  "
+        key={quranData.name.transliteration.en}
+      >
+        <div
+          className="flex flex-wrap -mx-2 overflow-hidden text-center items-center bg-[#1e293b] p-5 fixed w-full -m-0 top-0 z-50 "
+          key={quranData.name.transliteration.en}
+        >
+          <div
+            className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"
+            key={quranData.name.transliteration.en}
+          >
+            <div key={quranData.number}>
               <h1 key={quranData.number} className="text-2xl font-semibold">
                 {quranData.name.transliteration.en} -(
                 {quranData.name.long})
               </h1>
             </div>
           </div>
-          <div className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"  key={quranData.name.transliteration.en}>
+          <div
+            className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"
+            key={quranData.name.transliteration.en}
+          >
             {/* Navigate to Home */}
-            <div
-              key={quranData.number}
-              
-            >
+            <div key={quranData.number}>
               <Link key={quranData.name.transliteration.id} href="/">
                 <a
                   key={quranData.name.transliteration.en}
@@ -63,7 +70,7 @@ export default function Details({ quranData }) {
 
         <div
           key={quranData.name.transliteration.en}
-          className="md:grid md:grid-cols-3 md:grid-rows-2 md:gap-2 mt-10 mb-10"
+          className="md:grid md:grid-cols-3 md:grid-rows-2 md:gap-2 mt-10 mb-10 p-12 md:p-5"
         >
           <div
             key={quranData.name.transliteration.en}
@@ -72,7 +79,7 @@ export default function Details({ quranData }) {
             {/* Play button */}
             <div
               key={quranData.name.transliter}
-              className="bg-[#009b5a] p-5 m-5 rounded"
+              className="bg-[#009b5a] p-3 mt-6 md:mr-3 rounded"
             >
               Play the {quranData.name.long} (
               {quranData.name.transliteration.en})
@@ -91,7 +98,7 @@ export default function Details({ quranData }) {
               {quranData.verses.map((item) => (
                 <li
                   key={item.number}
-                  className="mt-4 bg-slate-900 p-4 rounded hover:bg-[#009b5a] list-decimal"
+                  className="mt-4 bg-slate-900 p-3 rounded hover:bg-[#009b5a] list-decimal"
                 >
                   <h1 className="mb-2" key={item.number}>
                     {item.text.arab}
