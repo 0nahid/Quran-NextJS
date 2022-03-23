@@ -42,6 +42,19 @@ export default function Details({ quarnData }) {
           {quarnData.name.long}){" "}
         </h1>
 
+        {/* Navigate to Home */}
+        <div key={quarnData.number} className="">
+          <Link key={quarnData.name.transliteration.id} href="/">
+            <a
+              href
+              key={quarnData.name.transliteration.en}
+              className="bg-[#009B5A] p-2 rounded text-white"
+            >
+              Back to Home
+            </a>
+          </Link>
+        </div>
+
         {/* Play button */}
         <button
           key={quarnData.number}
@@ -57,6 +70,7 @@ export default function Details({ quarnData }) {
           />
         </button>
         {/* Details */}
+
         <ol key={quarnData.number}>
           {quarnData.verses.map((item) => (
             <li
@@ -78,19 +92,6 @@ export default function Details({ quarnData }) {
             </li>
           ))}
         </ol>
-
-        {/* Navigate to Home */}
-        <div key={quarnData.number} className="mt-5">
-          <Link key={quarnData.name.transliteration.id} href="/">
-            <a
-              href
-              key={quarnData.name.transliteration.en}
-              className="bg-[#009B5A] p-2 rounded text-white "
-            >
-              Back to Home
-            </a>
-          </Link>
-        </div>
       </div>
     </>
   );
