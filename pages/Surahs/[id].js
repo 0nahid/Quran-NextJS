@@ -35,11 +35,11 @@ export default function Details({ quranData }) {
         {/* Name & Navigation */}
         <div
           key={quranData.name.transliter}
-          className="flex flex-wrap -mx-2 overflow-hidden"
+          className="flex flex-wrap -mx-2 overflow-hidden text-center items-center"
         >
           <div
             key={quranData.name.transliter}
-            className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"
+            className="w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"
           >
             <h1 key={quranData.number} className="text-2xl font-semibold">
               {quranData.name.transliteration.en} -(
@@ -49,7 +49,7 @@ export default function Details({ quranData }) {
 
           <div
             key={quranData.name.transliter}
-            className="my-2 px-2 w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"
+            className="w-full overflow-hidden md:w-1/2 lg:w-1/2 xl:w-1/2"
           >
             <Link key={quranData.name.transliteration.id} href="/">
               <a
@@ -66,11 +66,11 @@ export default function Details({ quranData }) {
 
         <div
           key={quranData.name.transliter}
-          className="flex flex-wrap -mx-2 overflow-hidden"
+          className="flex flex-wrap -mx-2 overflow-hidden "
         >
           <div
             key={quranData.name.transliter}
-            className="my-2 px-2 w-full overflow-hidden md:w-1/4 bg-[#009b5a] p-3 mt-6 md:mr-3 rounded"
+            className="w-full overflow-hidden md:w-1/4 bg-[#009b5a] m-5 p-3 rounded h-32"
           >
             Play the {quranData.name.long} ({quranData.name.transliteration.en})
             <AudionPlayer
@@ -81,7 +81,7 @@ export default function Details({ quranData }) {
 
           <div
             key={quranData.name.transliter}
-            className="my-2 px-2 w-full overflow-hidden md:w-1/4"
+            className="w-full p-10 overflow-hidden md:w-3/5"
           >
             {/* Details */}
             <ol key={quranData.number}>
